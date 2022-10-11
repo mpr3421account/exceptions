@@ -1,5 +1,6 @@
 package application;
 
+import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -12,8 +13,12 @@ public class Main {
             String[] vect = sc.nextLine().split(" ");
             int position = sc.nextInt();
             System.out.println(vect[position]);
-        } catch (ArrayIndexOutOfBoundsException e) {
+        }
+        catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("invalid position");
+        }
+        catch (InputMismatchException e){
+            System.out.println("input error");
         }
 
         System.out.println("End of program");
